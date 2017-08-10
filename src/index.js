@@ -5,11 +5,17 @@ import SearchBar from './components/search_bar';
 import API_KEY from '../secret.js';
 const destination = document.querySelector('.container');
 
-YTSearch({ key: API_KEY, term: 'surfboards' }, function (data) {
-  console.log(data);
-});
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { videos: [] };
+
+    YTSearch({ key: API_KEY, term: 'surfboards' }, (videos) => {
+      this.setState({ videos });
+    });
+  }
+
   render() {
     return (
     <div>
