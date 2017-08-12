@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Curly brace video is telling the component that there is a prop with video.
+// {video} in the argument is telling the component that there is a prop with video.
 // Simply assign props.video to a variable called video.
 const VideoListItem = ({ video }) => {
   const imageUrl = video.snippet.thumbnails.default.url;
